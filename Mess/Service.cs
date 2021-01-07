@@ -229,7 +229,10 @@ namespace Mess {
             return _members[member].Copy;
         }
 
-        public static Image GetDoorImage() {
+        public static Image GetDoorImage(bool isUpperDoor = false) {
+            if (isUpperDoor) {
+                return ImageService.UpperDoorImage;
+            }
             return ImageService.DoorImage;
         }
 
@@ -237,6 +240,12 @@ namespace Mess {
             public static Image DoorImage {
                 get {
                     return Image.FromFile(@"../img/door.png");
+                }
+            }
+
+            public static Image UpperDoorImage {
+                get {
+                    return Image.FromFile(@"../img/upper_door.png");
                 }
             }
 

@@ -70,6 +70,15 @@ namespace Mess {
             // distance between 2 doors is 'width'
             scene.Width = (doorNumbers + 1) * width;
             var doorStartLocation = new Point(width, scene.Height);
+            Door upperDoor = new Door(true) {
+                Location = new Point() {
+                    X = 0,
+                    Y = doorStartLocation.Y
+                },
+                Number = _department.Info.Upper,
+                IsUpperDoor = true
+            };
+            _doors.Add(upperDoor);
             for (var index = 0; index < doorNumbers; index++) {
                 Door door = new Door() {
                     Location = new Point() {
@@ -328,8 +337,12 @@ namespace Mess {
             Image image = new Bitmap(scene.Width, scene.Height);
             Graphics graphics = Graphics.FromImage(image);
             graphics.SmoothingMode = SmoothingMode.HighQuality;
-
-            foreach (var door in _doors) {
+            var index = 0;
+            if (Number == _department.Info.Upper) {
+                index = 1;
+            }
+            for (; index < _doors.Count; index++) {
+                var door = _doors[index];
                 if (!IsInScreen(door.Location)) continue;
                 var img = door.DoorImage;
                 var location = new Point() {
@@ -384,8 +397,8 @@ namespace Mess {
                     }
                 }  
             }
-            else if (index < _doors.Count) {
-                if (Math.Abs(_me.Location.X - _doors[index].Location.X) < range) {
+            else if (index + 1 < _doors.Count) {
+                if (Math.Abs(_me.Location.X - _doors[index + 1].Location.X) < range) {
                     var sub = Service.GetDepartment(_department.Info
                         .SubDepartments[index].Number);
                     if (_me.Join(sub)) {
@@ -416,13 +429,13 @@ namespace Mess {
                     enter.Visible = false;
                 }
             }
-            else if (index < _doors.Count) {
-                var doorX = _doors[index].Location.X;
+            else if (index + 1 < _doors.Count) {
+                var doorX = _doors[index + 1].Location.X;
                 enter.Location = new Point() {
                     X = doorX + scene.Location.X - enter.Width / 2,
                     Y = enter.Location.Y
                 };
-                if (Math.Abs(_me.Location.X - _doors[index].Location.X) < range) {
+                if (Math.Abs(_me.Location.X - _doors[index + 1].Location.X) < range) {
                     enter.Visible = true;
                 }
                 else {

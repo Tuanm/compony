@@ -1,1 +1,1 @@
-{"Name":"","Email":"me@compony","Birthday":"13/05/1955","Address":"Hai Phong","Position":0,"Department":0,"Location":"105, 0","SubMembers":[]}
+{"Name":"","Email":"me@compony","Birthday":"13/05/1955","Address":"Hai Phong","Position":0,"Department":0,"Location":"55, 0","SubMembers":[{"Name":"TUAN 1","Email":"","Birthday":"","Address":"","Position":0,"Department":1,"Location":"105, 0","SubMembers":[]},{"Name":"TUAN 2","Email":"","Birthday":"","Address":"","Position":0,"Department":2,"Location":"220, 0","SubMembers":[]}]}

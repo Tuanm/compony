@@ -56,7 +56,7 @@
             this.enter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.enter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enter.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enter.Location = new System.Drawing.Point(10, 170);
+            this.enter.Location = new System.Drawing.Point(163, 253);
             this.enter.Name = "enter";
             this.enter.Size = new System.Drawing.Size(129, 40);
             this.enter.TabIndex = 1;
@@ -248,12 +248,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(728, 386);
-            this.Controls.Add(this.ask);
-            this.Controls.Add(this.goask);
             this.Controls.Add(this.fire);
             this.Controls.Add(this.change);
             this.Controls.Add(this.hire);
             this.Controls.Add(this.enter);
+            this.Controls.Add(this.ask);
+            this.Controls.Add(this.goask);
             this.Controls.Add(this.map);
             this.Controls.Add(this.information);
             this.Controls.Add(this.menu);

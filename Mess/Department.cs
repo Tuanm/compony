@@ -120,11 +120,13 @@ namespace Mess {
         public Point Location;
         public int Number;
         public Image DoorImage;
+        public bool IsUpperDoor;
 
-        public Door() {
+        public Door(bool isUpperDoor = false) {
+            IsUpperDoor = isUpperDoor;
             Location = Point.Empty;
             Number = 0;
-            DoorImage = Service.GetDoorImage();
+            DoorImage = Service.GetDoorImage(IsUpperDoor);
         }
     }
 }
