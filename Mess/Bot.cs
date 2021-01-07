@@ -18,6 +18,7 @@ namespace Mess {
         public Bot(Member member) {
             _member = member;
             UpdateScene();
+            // AutoUpdateScene();
         }
 
         public void AutoUpdateScene() {
@@ -29,9 +30,18 @@ namespace Mess {
             });
         }
 
+        public void RandomlyUpdateScene() {
+            if (_random.Next(_max) < _max / 10) {
+                UpdateScene();
+            }
+        }
+
         public void UpdateScene() {
             var department = Service.GetDepartment(_member.Info.Department);
-            if (department == null) return;
+            if (department == null) {
+                IsActivated = false;
+                return;
+            }
             Number = department.Number;
             _max = Workspace.GetSceneWidth(department);
         }
@@ -53,6 +63,7 @@ namespace Mess {
         private Point Next(Point target, int padding = 50) {
             Point _target = target;
             if (_member.Target == Point.Empty) {
+                UpdateScene();
                 Thread.Sleep(1000); // lemme take a break
                 _target = new Point() {
                     X = _random.Next(_max - 2 * padding) + padding,

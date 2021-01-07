@@ -22,6 +22,7 @@ namespace Mess {
             Position = MemberPosition.None,
             Location = Point.Empty
         };
+        public static int Capacity = Mess.Department.Capacity - 1;
         public string Name;
         public string Email;
         public string Birthday;
@@ -63,15 +64,22 @@ namespace Mess {
             SubMembers.Add(info);
         }
 
-        public void Append(MemberInfo info, string head) {
+        public bool Append(MemberInfo info, string head) {
             if (Name.Equals(head)) {
-                SubMembers.Add(info);
+                if (SubMembers.Count < Capacity) {
+                    SubMembers.Add(info);
+                    return true;
+                }
+                return false;
             }
             else {
                 foreach (var member in SubMembers) {
-                    member.Append(info, head);
+                    if (member.Append(info, head)) {
+                        return true;
+                    }
                 }
             }
+            return false;
         }
 
         public bool Remove(string name) {

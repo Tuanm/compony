@@ -69,7 +69,7 @@ namespace Mess {
         public List<Member> Members { get => _members; }
         public int Number { get => _info.Number; }
         public int Count { get => _info.SubDepartments.Count; }
-        public static int Capacity = int.MaxValue;
+        public static int Capacity = 20;
         
         public Department(DepartmentInfo info) {
             _info = info;

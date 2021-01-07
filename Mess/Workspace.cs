@@ -129,8 +129,13 @@ namespace Mess {
                     new Notification("Whoops!\r\nDepartment existed.").ShowDialog();
                 }
                 else {
-                    info = Service.GetMember(info.Name).Info;
-                    _me.Hire(info, _department.Info.Head);
+                    var member = Service.GetMember(info.Name);
+                    info = member.Info;
+                    if (!_me.Hire(info, _department.Info.Head)) {
+                        Service.RemoveMember(member);
+                        new Notification("Whoops!\r\nDepartment full.\r\n"
+                            + $"Capacity: {Department.Capacity}\r\n").ShowDialog();
+                    }
                     // Service.UpdateWorkspaces(Number);
                 }
             }
@@ -230,6 +235,8 @@ namespace Mess {
                     ask.Visible = true;
                 }
                 else {
+                    new Notification("There is no one but you in this workspace\r\n")
+                        .ShowDialog();
                     StopAsking();
                 }
             };
@@ -245,6 +252,8 @@ namespace Mess {
                     ask.Visible = true;
                 }
                 else {
+                    new Notification("There is no one but you in this workspace\r\n")
+                        .ShowDialog();
                     StopAsking();
                 }
             };
@@ -252,23 +261,18 @@ namespace Mess {
                 if (_seeing >= 0) {
                     if (Math.Abs(_me.Target.X - _me.Location.X)
                         > this.Width / 2) return;
-                    try {
-                        string data = string.Empty;
-                        var member = _members[_seeing];
-                        if (_me.Higher(member)) {
-                            member.Ask(_me, ref _asked);
-                            data = $"You asked {member.Name}.\r\n"
-                                + "You've got his info.\r\n";
-                        }
-                        else {
-                            data = "You have no permission to ask this member.\r\n";
-                        }
-                        new Notification(data).ShowDialog();
-                        StopAsking();
-                    } catch (Exception ex) {
-                        // TODO: ask member for info.
-                        new Notification("COMING_SOON_BRO!" + ex.Message).ShowDialog();
+                    string data = string.Empty;
+                    var member = _members[_seeing];
+                    if (_me.Higher(member)) {
+                        member.Ask(_me, ref _asked);
+                        data = $"You asked {member.Name}.\r\n"
+                            + "You've got his info.\r\n";
                     }
+                    else {
+                        data = "You have no permission to ask this member.\r\n";
+                    }
+                    new Notification(data).ShowDialog();
+                    StopAsking();
                 }
             };
             timer.Tick += (object sender, EventArgs e) => {

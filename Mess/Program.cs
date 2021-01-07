@@ -19,7 +19,7 @@ namespace Mess {
             Application.SetCompatibleTextRenderingDefault(false);
 
             try {
-                string welcome = "\rYou are a director of a company. "
+                string welcome = "\rYou are director of a company. "
                     + "Everything you can do is going around, "
                     + "asking any employee for information. "
                     + "You can also hire new employee, fire some, etc. "
@@ -31,7 +31,7 @@ namespace Mess {
                 Service.Start();
                 Service.JoinAll();
 
-                var me = Service.GetMember("Tuan");
+                var me = Service.GetMember(string.Empty);
                 if (me == null) {
                     throw new Exception(
                         "\rI guess you have modified some files.\r\n"

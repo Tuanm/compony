@@ -48,8 +48,7 @@ namespace Mess {
         }
 
         public override bool Hire(MemberInfo info, string head) {
-            _info.Append(info, head);
-            return true;
+            return _info.Append(info, head);
         }
 
         public override bool Fire(string name) {

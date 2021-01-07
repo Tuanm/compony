@@ -42,17 +42,16 @@ namespace Mess {
             _removed = new List<MemberInfo>();
         }
 
-        private void FireSelected(TreeNode node, MemberInfo info) {
+        private void RemoveChecked(TreeNode node, MemberInfo info,
+            bool isSelected = false) {
             for (var index = node.Nodes.Count - 1; index >= 0; index--) {
                 var subnode = node.Nodes[index];
-                if (subnode.Checked) {
+                var subinfo = info.SubMembers[index];
+                RemoveChecked(subnode, subinfo, isSelected || subnode.Checked);
+                if (isSelected || subnode.Checked) {
                     node.Nodes.Remove(subnode);
-                    var subinfo = info.SubMembers[index];
-                    _removed.Add(subinfo);
                     info.SubMembers.Remove(subinfo);
-                }
-                else {
-                    FireSelected(subnode, info.SubMembers[index]);
+                    _removed.Add(subinfo);
                 }
             }
         }
@@ -72,7 +71,7 @@ namespace Mess {
         }
 
         private void fireOK_Click(object sender, EventArgs e) {
-            FireSelected(_current, _info);
+            RemoveChecked(_current, _info);
             this.Close();
         }
     }
