@@ -1,14 +1,6 @@
-﻿using Newtonsoft.Json;
-using WMPLib;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
 
 
 namespace Mess {
@@ -19,7 +11,8 @@ namespace Mess {
             Application.SetCompatibleTextRenderingDefault(false);
 
             try {
-                string welcome = "\rYou are director of a company. "
+                string welcome
+                    = "\rYou are director of a company. "
                     + "Everything you can do is going around, "
                     + "asking any employee for information. "
                     + "You can also hire new employee, fire some, etc. "
