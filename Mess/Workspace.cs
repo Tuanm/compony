@@ -126,10 +126,19 @@ namespace Mess {
                     info = member.Info;
                     if (!_me.Hire(info, _department.Info.Head)) {
                         Service.RemoveMember(member);
-                        new Notification("Whoops!\r\nDepartment full.\r\n"
+                        new Notification(
+                            "Whoops!\r\nDepartment full.\r\n"
                             + $"Capacity: {Department.Capacity}\r\n").ShowDialog();
                     }
-                    // Service.UpdateWorkspaces(Number);
+                    else {
+                        if (info.Email.Length < 1
+                            || info.Birthday.Length < 1 || info.Address.Length < 1) {
+                            new Notification(
+                                "Some information is missing or not correct. "
+                                + "But you can change later by managing members.\r\n")
+                                .ShowDialog();
+                        }
+                    }
                 }
             }
         }
@@ -228,7 +237,8 @@ namespace Mess {
                     ask.Visible = true;
                 }
                 else {
-                    new Notification("There is no one but you in this workspace\r\n")
+                    new Notification(
+                        "There is no one but you in this workspace\r\n")
                         .ShowDialog();
                     StopAsking();
                 }
@@ -245,7 +255,8 @@ namespace Mess {
                     ask.Visible = true;
                 }
                 else {
-                    new Notification("There is no one but you in this workspace\r\n")
+                    new Notification(
+                        "There is no one but you in this workspace\r\n")
                         .ShowDialog();
                     StopAsking();
                 }
@@ -368,7 +379,6 @@ namespace Mess {
                             InitializeScene(_me.Name, upper.Number, this.Number);
                         }
                         else {
-                            // TODO: Display Pop-up
                             new Notification("Workspace too crowded!").ShowDialog();
                         }
                     }
@@ -383,13 +393,9 @@ namespace Mess {
                         InitializeScene(_me.Name, sub.Number);
                     }
                     else {
-                        // TODO: Display Pop-up
                         new Notification("Workspace too crowded!").ShowDialog();
                     }
                 }
-            }
-            else {
-                // TODO: Check member interactions
             }
         }
 
@@ -402,7 +408,9 @@ namespace Mess {
                     Y = enter.Location.Y
                 };
                 if (Math.Abs(_me.Location.X) < 2 * range) {
-                    enter.Visible = true;
+                    if (Number != _department.Info.Upper) {
+                        enter.Visible = true;
+                    }
                 }
                 else {
                     enter.Visible = false;

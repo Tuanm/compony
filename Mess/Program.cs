@@ -39,7 +39,8 @@ namespace Mess {
 
                 Service.Terminate();
             } catch (Exception e) {
-                string message = "\rWhoops! You found an error: "
+                string message
+                    = "\rWhoops! You found an error: "
                     + $"{e.Message}\r\n"
                     + "\rReport to me now! (https://m.me/Teemoing)\r\n";
                 Application.Run(new Notification(message) {

@@ -24,19 +24,19 @@ namespace Mess {
         }
 
         public string Namee {
-            get => addmemNameInput.Text;
+            get => addmemNameInput.Text.Trim();
         }
 
         public string Email {
-            get => addmemEmailInput.Text;
+            get => addmemEmailInput.Text.Trim();
         }
 
         public string Birthday {
-            get => addmemBirthdayInput.Text;
+            get => addmemBirthdayInput.Text.Trim();
         }
 
         public string Address {
-            get => addmemAddressInput.Text;
+            get => addmemAddressInput.Text.Trim();
         }
 
         public MemberPosition Position {
@@ -53,7 +53,8 @@ namespace Mess {
 
         public int Number {
             get {
-                if (int.TryParse(addmemDepartmentNumberInput.Text, out int number)) {
+                if (int.TryParse(
+                    addmemDepartmentNumberInput.Text.Trim(), out int number)) {
                     return number;
                 }
                 return 0;
@@ -62,14 +63,12 @@ namespace Mess {
 
         private bool IsValid() {
             if (Namee.Length < 1) {
+                new Notification("Whoops! Name too short!").ShowDialog();
                 return false;
             }
 
             // check others
 
-            if (Position == MemberPosition.None) {
-                return false;
-            }
             return true;
         }
 
@@ -78,7 +77,9 @@ namespace Mess {
         }
 
         private void addmemOK_Click(object sender, EventArgs e) {
-            this.Close();
+            if (IsValid()) {
+                this.Close();
+            }
         }
     }
 }

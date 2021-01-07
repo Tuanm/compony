@@ -141,6 +141,7 @@
             // addmemNameInput
             // 
             this.addmemNameInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addmemNameInput.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.addmemNameInput.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addmemNameInput.Location = new System.Drawing.Point(154, 26);
             this.addmemNameInput.Name = "addmemNameInput";
