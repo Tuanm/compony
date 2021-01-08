@@ -21,7 +21,9 @@ namespace Mess {
 
         public int Number { get => _department.Number; }
         public static int GetSceneWidth(Department department, int width = 500) {
-            return (department.Count + 1) * width;
+            int doorNumbers = department.Count;
+            if (doorNumbers == 0) return (int)(1.5 * width);
+            return (doorNumbers + 1) * width;
         }
 
         public override string ToString() {
@@ -68,7 +70,12 @@ namespace Mess {
             _doors = new List<Door>();
             var doorNumbers = _department.Count;
             // distance between 2 doors is 'width'
-            scene.Width = (doorNumbers + 1) * width;
+            if (doorNumbers == 0) {
+                scene.Width = this.Width;
+            }
+            else {
+                scene.Width = (doorNumbers + 1) * width;
+            }
             var doorStartLocation = new Point(width, scene.Height);
             Door upperDoor = new Door(true) {
                 Location = new Point() {
@@ -153,6 +160,14 @@ namespace Mess {
         }
 
         private void Fire() {
+            if (_seeing != -1) {
+                new Notification(
+                    "Whoops!\r\n"
+                    + "You cannot fire your member(s) "
+                    + "while following a member.\r\n")
+                    .ShowDialog();
+                return;
+            }
             var dialog = new Fire(_me.Info);
             var result = dialog.ShowDialog();
             if (result == DialogResult.OK) {
@@ -503,6 +518,13 @@ namespace Mess {
                     // do nothing
                 }
             }
+        }
+
+        public void About(string text) {
+            aboutContent.Text = text;
+            aboutme.Click += (object sender, EventArgs e) => {
+                new Notification(aboutContent.Text).ShowDialog();
+            };
         }
     }
 }

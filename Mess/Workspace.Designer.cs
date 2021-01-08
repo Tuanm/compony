@@ -38,10 +38,13 @@
             this.ask = new System.Windows.Forms.Button();
             this.leftSeeing = new System.Windows.Forms.Label();
             this.rightSeeing = new System.Windows.Forms.Label();
+            this.aboutme = new System.Windows.Forms.Panel();
+            this.aboutContent = new System.Windows.Forms.Label();
             this.seeing = new System.Windows.Forms.Label();
             this.scene = new System.Windows.Forms.PictureBox();
             this.goask = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.see)).BeginInit();
+            this.aboutme.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scene)).BeginInit();
             this.goask.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +59,7 @@
             this.enter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.enter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enter.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enter.Location = new System.Drawing.Point(163, 253);
+            this.enter.Location = new System.Drawing.Point(587, 334);
             this.enter.Name = "enter";
             this.enter.Size = new System.Drawing.Size(129, 40);
             this.enter.TabIndex = 1;
@@ -205,6 +208,28 @@
             this.rightSeeing.Text = "▶";
             this.toolTip.SetToolTip(this.rightSeeing, "See next member");
             // 
+            // aboutme
+            // 
+            this.aboutme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.aboutme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.aboutme.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aboutme.Controls.Add(this.aboutContent);
+            this.aboutme.Location = new System.Drawing.Point(444, 171);
+            this.aboutme.Name = "aboutme";
+            this.aboutme.Size = new System.Drawing.Size(155, 100);
+            this.aboutme.TabIndex = 13;
+            this.toolTip.SetToolTip(this.aboutme, "About me");
+            // 
+            // aboutContent
+            // 
+            this.aboutContent.AutoSize = true;
+            this.aboutContent.Font = new System.Drawing.Font("Consolas", 3.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutContent.Location = new System.Drawing.Point(8, 9);
+            this.aboutContent.Name = "aboutContent";
+            this.aboutContent.Size = new System.Drawing.Size(18, 6);
+            this.aboutContent.TabIndex = 0;
+            this.aboutContent.Text = "About";
+            // 
             // seeing
             // 
             this.seeing.AutoSize = true;
@@ -258,6 +283,7 @@
             this.Controls.Add(this.information);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.scene);
+            this.Controls.Add(this.aboutme);
             this.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -269,6 +295,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Workspace";
             ((System.ComponentModel.ISupportInitialize)(this.see)).EndInit();
+            this.aboutme.ResumeLayout(false);
+            this.aboutme.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scene)).EndInit();
             this.goask.ResumeLayout(false);
             this.goask.PerformLayout();
@@ -295,5 +323,7 @@
         private System.Windows.Forms.PictureBox see;
         private System.Windows.Forms.Label rightSeeing;
         private System.Windows.Forms.Label leftSeeing;
+        private System.Windows.Forms.Panel aboutme;
+        private System.Windows.Forms.Label aboutContent;
     }
 }
