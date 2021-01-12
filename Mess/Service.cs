@@ -22,7 +22,8 @@ namespace Mess {
         }
 
         private static void Store() {
-            string data = JsonConvert.SerializeObject(_root.Info);
+            string data = JsonConvert.SerializeObject(_root.Info,
+                Formatting.Indented);
             File.WriteAllText(_source, data);
         }
 

@@ -196,6 +196,17 @@ namespace Mess {
             }
         }
 
+        private void Search() {
+            var dialog = new Form();
+            var result = dialog.ShowDialog();
+
+            // TODO: import and export data
+
+            if (result == DialogResult.OK) {
+                // TODO: data handling...
+            }
+        }
+
         private void InitializeEvents() {
             void StopAsking() {
                 _seeing = -1;
@@ -223,6 +234,9 @@ namespace Mess {
             };
             map.Click += (object sender, EventArgs e) => {
                 new Map(_department.Info).ShowDialog();
+            };
+            search.Click += (object sender, EventArgs e) => {
+                Search();
             };
             foreach (var permission in _permissions.Keys) {
                 permission.Click += (object sender, EventArgs e) => {

@@ -43,6 +43,7 @@
             this.seeing = new System.Windows.Forms.Label();
             this.scene = new System.Windows.Forms.PictureBox();
             this.goask = new System.Windows.Forms.Panel();
+            this.search = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.see)).BeginInit();
             this.aboutme.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scene)).BeginInit();
@@ -267,12 +268,26 @@
             this.goask.Size = new System.Drawing.Size(272, 70);
             this.goask.TabIndex = 11;
             // 
+            // search
+            // 
+            this.search.AutoSize = true;
+            this.search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.search.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search.Location = new System.Drawing.Point(154, 10);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(26, 28);
+            this.search.TabIndex = 14;
+            this.search.Text = "⌕";
+            this.toolTip.SetToolTip(this.search, "Search");
+            // 
             // Workspace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(728, 386);
+            this.Controls.Add(this.search);
             this.Controls.Add(this.fire);
             this.Controls.Add(this.change);
             this.Controls.Add(this.hire);
@@ -325,5 +340,6 @@
         private System.Windows.Forms.Label leftSeeing;
         private System.Windows.Forms.Panel aboutme;
         private System.Windows.Forms.Label aboutContent;
+        private System.Windows.Forms.Label search;
     }
 }
