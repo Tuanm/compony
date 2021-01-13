@@ -214,15 +214,8 @@ namespace Mess {
                 seeing.Text = string.Empty;
                 ask.Visible = false;
             }
-            scene.Click += (object sender, EventArgs e) => {
-                StopAsking();
-                _me.Target = (e as MouseEventArgs).Location;
-            };
-            enter.Click += (object sender, EventArgs e) => {
-                StopAsking();
-                TryEnter();
-            };
-            menu.Click += (object sender, EventArgs e) => {
+
+            void ClickMenu() {
                 if (change.Visible) {
                     menu.Text = "☰";
                 }
@@ -232,6 +225,20 @@ namespace Mess {
                 foreach (var permission in _permissions.Keys) {
                     permission.Visible = !permission.Visible;
                 }
+            }
+            scene.Click += (object sender, EventArgs e) => {
+                if (change.Visible) {
+                    ClickMenu();
+                }
+                StopAsking();
+                _me.Target = (e as MouseEventArgs).Location;
+            };
+            enter.Click += (object sender, EventArgs e) => {
+                StopAsking();
+                TryEnter();
+            };
+            menu.Click += (object sender, EventArgs e) => {
+                ClickMenu();
             };
             map.Click += (object sender, EventArgs e) => {
                 new Map(_department.Info).ShowDialog();
@@ -367,6 +374,26 @@ namespace Mess {
             Image image = new Bitmap(scene.Width, scene.Height);
             Graphics graphics = Graphics.FromImage(image);
             graphics.SmoothingMode = SmoothingMode.HighQuality;
+
+
+            if (Number == _me.Info.Department) {
+                var location = Service.MilkteaMan.Location;
+                var manImage = Service.GetMilkteaManImage();
+                var manLocation = new Point() {
+                    X = location.X - manImage.Width / 2,
+                    Y = scene.Height - manImage.Height
+                };
+                var machineImage = Service.GetMilkteaMachineImage();
+                var machineLocation = new Point() {
+                    X = location.X - machineImage.Width / 2
+                        - manImage.Width / 2,
+                    Y = scene.Height - machineImage.Height
+                };
+                graphics.DrawImage(machineImage, machineLocation);
+                graphics.DrawImage(manImage, manLocation);
+            }
+
+
             var index = 0;
             if (Number == _department.Info.Upper) {
                 index = 1;
@@ -412,6 +439,16 @@ namespace Mess {
         }
 
         private void TryEnter(int range = 50, int width = 500) {
+
+            if (Number == _me.Info.Department) {
+                // click enter to interact with milktea-machine
+                var location = Service.MilkteaMan.Location;
+                if (Math.Abs(_me.Location.X - location.X) < 2 * range) {
+                    new Notification("OUT_OF_STOCK").ShowDialog();
+                    return;
+                }
+            }
+
             // distance between 2 doors is 'width'
             int index = (int)Math.Round(1.0 * _me.Location.X / width) - 1;
             if (index < 0) {
@@ -443,6 +480,25 @@ namespace Mess {
         }
 
         private void DisplayEnterRange(int range = 50, int width = 500) {
+            
+            if (Number == _me.Info.Department) {
+                // display the way to interact with milktea-machine
+                var location = Service.MilkteaMan.Location;
+                var img = Service.GetMilkteaManImage();
+                if (Math.Abs(_me.Location.X - location.X) < 2 * range) {
+                    enter.Location = new Point() {
+                        X = location.X + scene.Location.X - enter.Width / 2
+                            - img.Width / 2,
+                        Y = enter.Location.Y
+                    };
+                    enter.Visible = true;
+                    return;
+                }
+                else {
+                    enter.Visible = false;
+                }
+            }
+
             // distance between 2 doors is 'width'
             int index = (int)Math.Round(1.0 * _me.Location.X / width) - 1;
             if (index < 0) {

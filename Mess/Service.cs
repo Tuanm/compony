@@ -6,6 +6,7 @@ using System.IO;
 
 namespace Mess {
     static class Service {
+        public static Member MilkteaMan;
         private static string _source = @"../data/data.json";
         private static Dictionary<Member, ImageService> _members = new Dictionary<Member, ImageService>();
         private static List<Department> _departments = new List<Department>();
@@ -15,6 +16,10 @@ namespace Mess {
 
         public static void Start() {
             Load();
+            MilkteaMan = new Employee(new MemberInfo() {
+                Name = "hello",
+                Location = new Point(300, 0)
+            });
         }
 
         public static void Terminate() {
@@ -237,6 +242,14 @@ namespace Mess {
             return ImageService.DoorImage;
         }
 
+        public static Image GetMilkteaManImage() {
+            return ImageService.MilkteaManImage;
+        }
+
+        public static Image GetMilkteaMachineImage() {
+            return ImageService.MilkteaMachineImage;
+        }
+
         class ImageService {
             public static Image DoorImage {
                 get {
@@ -247,6 +260,18 @@ namespace Mess {
             public static Image UpperDoorImage {
                 get {
                     return Image.FromFile(@"../img/upper_door.png");
+                }
+            }
+
+            public static Image MilkteaMachineImage {
+                get {
+                    return Image.FromFile(@"../img/milkteamachine.png");
+                }
+            }
+
+            public static Image MilkteaManImage {
+                get {
+                    return Image.FromFile(@"../img/milkteaman.png");
                 }
             }
 

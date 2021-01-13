@@ -62,3 +62,4 @@ D:\github\compony\Mess\obj\Debug\Mess.csproj.CoreCompileInputs.cache
 D:\github\compony\Mess\obj\Debug\Mess.csproj.CopyComplete
 D:\github\compony\Mess\obj\Debug\Mess.exe
 D:\github\compony\Mess\obj\Debug\Mess.pdb
+D:\compony\Mess\obj\Debug\Mess.Search.resources
