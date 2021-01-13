@@ -5,45 +5,137 @@
   "Address": "Hai Phong",
   "Position": 0,
   "Department": 0,
-  "Location": "190, 0",
+  "Location": "0, 0",
   "SubMembers": [
     {
-      "Name": "TUAN",
-      "Email": "tuan@co",
-      "Birthday": "13/05/1955",
-      "Address": "Hai Phong",
+      "Name": "A",
+      "Email": "",
+      "Birthday": "",
+      "Address": "Lang son",
       "Position": 0,
       "Department": 1,
-      "Location": "515, 0",
+      "Location": "300, 0",
       "SubMembers": [
         {
-          "Name": "TUAN 1",
-          "Email": "tuan1@co",
-          "Birthday": "31/02/2000",
-          "Address": "Hanoi",
-          "Position": 1,
-          "Department": 1,
-          "Location": "675, 0",
-          "SubMembers": []
-        },
-        {
-          "Name": "TUAN 2",
-          "Email": "tuan2@co",
-          "Birthday": "31/02/2000",
-          "Address": "Hanoi",
-          "Position": 1,
-          "Department": 1,
-          "Location": "620, 0",
-          "SubMembers": []
-        },
-        {
-          "Name": "TUAN 3",
-          "Email": "tuan3@co",
-          "Birthday": "31/02/2000",
-          "Address": "Hanoi",
+          "Name": "1",
+          "Email": "",
+          "Birthday": "",
+          "Address": "Hung yen",
           "Position": 1,
           "Department": 1,
           "Location": "285, 0",
+          "SubMembers": []
+        },
+        {
+          "Name": "2",
+          "Email": "",
+          "Birthday": "",
+          "Address": "Hai duong ",
+          "Position": 1,
+          "Department": 1,
+          "Location": "360, 0",
+          "SubMembers": []
+        },
+        {
+          "Name": "3",
+          "Email": "",
+          "Birthday": "",
+          "Address": "Hai phong",
+          "Position": 1,
+          "Department": 1,
+          "Location": "465, 0",
+          "SubMembers": []
+        },
+        {
+          "Name": "AA",
+          "Email": "",
+          "Birthday": "",
+          "Address": "Lang son",
+          "Position": 1,
+          "Department": 1,
+          "Location": "580, 0",
+          "SubMembers": []
+        }
+      ]
+    },
+    {
+      "Name": "B",
+      "Email": "",
+      "Birthday": "",
+      "Address": "",
+      "Position": 0,
+      "Department": 2,
+      "Location": "590, 0",
+      "SubMembers": [
+        {
+          "Name": "4",
+          "Email": "",
+          "Birthday": "",
+          "Address": "",
+          "Position": 1,
+          "Department": 2,
+          "Location": "340, 0",
+          "SubMembers": []
+        },
+        {
+          "Name": "5",
+          "Email": "",
+          "Birthday": "",
+          "Address": "",
+          "Position": 1,
+          "Department": 2,
+          "Location": "425, 0",
+          "SubMembers": []
+        },
+        {
+          "Name": "6",
+          "Email": "",
+          "Birthday": "",
+          "Address": "",
+          "Position": 1,
+          "Department": 2,
+          "Location": "470, 0",
+          "SubMembers": []
+        }
+      ]
+    },
+    {
+      "Name": "C",
+      "Email": "",
+      "Birthday": "",
+      "Address": "",
+      "Position": 0,
+      "Department": 3,
+      "Location": "430, 0",
+      "SubMembers": [
+        {
+          "Name": "7",
+          "Email": "",
+          "Birthday": "",
+          "Address": "",
+          "Position": 1,
+          "Department": 3,
+          "Location": "630, 0",
+          "SubMembers": []
+        },
+        {
+          "Name": "8",
+          "Email": "",
+          "Birthday": "",
+          "Address": "",
+          "Position": 1,
+          "Department": 3,
+          "Location": "430, 0",
+          "SubMembers": []
+        },
+        {
+          "Name": "9",
+          "Email": "",
+          "Birthday": "",
+          "Address": "",
+          "Position": 1,
+          "Department": 3,
+          "Location": "665, 0",
           "SubMembers": []
         }
       ]

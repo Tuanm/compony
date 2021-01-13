@@ -35,9 +35,20 @@ namespace Mess {
                 });
 
                 var workspace = Service.GetWorkspace(me.Name);
+                workspace.About("Tuanm "
+                    + "& xuananh24\r\n"
+                    + "2020, Jan. 13th\r\n"
+                    + "https://github.com/Tuanm/compony" + "\r\n");
                 Application.Run(workspace);
 
                 Service.Terminate();
+
+                string about = "UI designed & Composite implemented by Tuanm.\r\n"
+                    + "Iterator implemented by xuananh24.\r\n"
+                    + "Thanks for your feedback!";
+                Application.Run(new Notification(about) {
+                    IsCenterToScreen = true
+                });
             } catch (Exception e) {
                 string message
                     = "\rWhoops! You found an error: "

@@ -197,7 +197,8 @@ namespace Mess {
         }
 
         private void Search() {
-            var dialog = new Form();
+            var department = Service.GetDepartment(_me.Info.Department); // biggest department from mine
+            var dialog = new Search(_me.Info, department.Info);
             var result = dialog.ShowDialog();
 
             // TODO: import and export data

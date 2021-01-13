@@ -10,7 +10,7 @@ namespace Mess {
         MoveRight
     }
 
-    class MemberInfo {
+    partial class MemberInfo {
         public static MemberInfo Empty = new MemberInfo() {
             Name = string.Empty,
             Email = string.Empty,

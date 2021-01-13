@@ -71,9 +71,6 @@ namespace Mess {
                 return null;
             }
             var workspace = new Workspace(name, number);
-            workspace.About("Author: Do Minh Tuan (Tuanm)\r\n"
-                + "Latest update: 2020, Jan. 8th\r\n"
-                + "Repository: https://github.com/Tuanm/compony");
             _workspaces.Add(workspace);
             return workspace;
         }
