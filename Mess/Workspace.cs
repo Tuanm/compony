@@ -450,7 +450,7 @@ namespace Mess {
                 // click enter to interact with milktea-machine
                 var location = Service.MilkteaMan.Location;
                 if (Math.Abs(_me.Location.X - location.X) < 2 * range) {
-                    new Notification("OUT_OF_STOCK").ShowDialog();
+                    new MilkteaForm().Show();
                     return;
                 }
             }

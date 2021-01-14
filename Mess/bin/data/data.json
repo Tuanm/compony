@@ -5,7 +5,7 @@
   "Address": "",
   "Position": 0,
   "Department": 0,
-  "Location": "135, 0",
+  "Location": "530, 0",
   "SubMembers": [
     {
       "Name": "TUAN",
@@ -14,7 +14,7 @@
       "Address": "Hai Phong",
       "Position": 1,
       "Department": 0,
-      "Location": "580, 0",
+      "Location": "1090, 0",
       "SubMembers": []
     },
     {
@@ -34,7 +34,7 @@
       "Address": "Ninh Binh",
       "Position": 0,
       "Department": 2,
-      "Location": "0, 0",
+      "Location": "505, 0",
       "SubMembers": []
     }
   ]
