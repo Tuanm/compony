@@ -38,14 +38,11 @@
             this.ask = new System.Windows.Forms.Button();
             this.leftSeeing = new System.Windows.Forms.Label();
             this.rightSeeing = new System.Windows.Forms.Label();
-            this.aboutme = new System.Windows.Forms.Panel();
-            this.aboutContent = new System.Windows.Forms.Label();
+            this.search = new System.Windows.Forms.Label();
             this.seeing = new System.Windows.Forms.Label();
             this.scene = new System.Windows.Forms.PictureBox();
             this.goask = new System.Windows.Forms.Panel();
-            this.search = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.see)).BeginInit();
-            this.aboutme.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scene)).BeginInit();
             this.goask.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +62,7 @@
             this.enter.Size = new System.Drawing.Size(129, 40);
             this.enter.TabIndex = 1;
             this.enter.Text = "Enter";
-            this.toolTip.SetToolTip(this.enter, "Enter the workspace");
+            this.toolTip.SetToolTip(this.enter, "Enter/Interact");
             this.enter.UseVisualStyleBackColor = false;
             this.enter.Visible = false;
             // 
@@ -209,27 +206,18 @@
             this.rightSeeing.Text = "▶";
             this.toolTip.SetToolTip(this.rightSeeing, "See next member");
             // 
-            // aboutme
+            // search
             // 
-            this.aboutme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.aboutme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.aboutme.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aboutme.Controls.Add(this.aboutContent);
-            this.aboutme.Location = new System.Drawing.Point(444, 171);
-            this.aboutme.Name = "aboutme";
-            this.aboutme.Size = new System.Drawing.Size(155, 100);
-            this.aboutme.TabIndex = 13;
-            this.toolTip.SetToolTip(this.aboutme, "About me");
-            // 
-            // aboutContent
-            // 
-            this.aboutContent.AutoSize = true;
-            this.aboutContent.Font = new System.Drawing.Font("Consolas", 3.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutContent.Location = new System.Drawing.Point(8, 9);
-            this.aboutContent.Name = "aboutContent";
-            this.aboutContent.Size = new System.Drawing.Size(18, 6);
-            this.aboutContent.TabIndex = 0;
-            this.aboutContent.Text = "About";
+            this.search.AutoSize = true;
+            this.search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.search.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search.Location = new System.Drawing.Point(154, 10);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(26, 28);
+            this.search.TabIndex = 14;
+            this.search.Text = "⌕";
+            this.toolTip.SetToolTip(this.search, "Search");
             // 
             // seeing
             // 
@@ -268,21 +256,9 @@
             this.goask.Size = new System.Drawing.Size(272, 70);
             this.goask.TabIndex = 11;
             // 
-            // search
-            // 
-            this.search.AutoSize = true;
-            this.search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.search.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search.Location = new System.Drawing.Point(154, 10);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(26, 28);
-            this.search.TabIndex = 14;
-            this.search.Text = "⌕";
-            this.toolTip.SetToolTip(this.search, "Search");
-            // 
             // Workspace
             // 
+            this.AcceptButton = this.enter;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
@@ -298,7 +274,6 @@
             this.Controls.Add(this.information);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.scene);
-            this.Controls.Add(this.aboutme);
             this.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -310,8 +285,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Workspace";
             ((System.ComponentModel.ISupportInitialize)(this.see)).EndInit();
-            this.aboutme.ResumeLayout(false);
-            this.aboutme.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scene)).EndInit();
             this.goask.ResumeLayout(false);
             this.goask.PerformLayout();
@@ -338,8 +311,6 @@
         private System.Windows.Forms.PictureBox see;
         private System.Windows.Forms.Label rightSeeing;
         private System.Windows.Forms.Label leftSeeing;
-        private System.Windows.Forms.Panel aboutme;
-        private System.Windows.Forms.Label aboutContent;
         private System.Windows.Forms.Label search;
     }
 }

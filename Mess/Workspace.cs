@@ -331,6 +331,12 @@ namespace Mess {
                     Service.RemoveWorkspace(this);
                     return;
                 }
+                if (_me.Info.SubMembers.Count == 0) {
+                    search.Visible = false;
+                }
+                else {
+                    search.Visible = true;
+                }
                 if (_seeing != -1) {
                     _me.Target = _members[_seeing].Location;
                 }
@@ -589,13 +595,6 @@ namespace Mess {
                     // do nothing
                 }
             }
-        }
-
-        public void About(string text) {
-            aboutContent.Text = text;
-            aboutme.Click += (object sender, EventArgs e) => {
-                new Notification(aboutContent.Text).ShowDialog();
-            };
         }
     }
 }

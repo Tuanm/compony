@@ -35,9 +35,6 @@ namespace Mess {
                 });
 
                 var workspace = Service.GetWorkspace(me.Name);
-                workspace.About("Tuanm & xuananh24 & tagiakhiem2000\r\n"
-                    + "Hanoi, 2020, Jan. 13th\r\n"
-                    + "https://github.com/Tuanm/compony" + "\r\n");
                 Application.Run(workspace);
 
                 Service.Terminate();

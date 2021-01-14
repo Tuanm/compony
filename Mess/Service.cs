@@ -17,9 +17,12 @@ namespace Mess {
         public static void Start() {
             Load();
             MilkteaMan = new Employee(new MemberInfo() {
-                Name = "hello",
+                Name = "Tuan",
                 Location = new Point(300, 0)
             });
+            /*_members.Add(MilkteaMan, new ImageService() { 
+                Copy = ImageService.MilkteaManImage
+            });*/
         }
 
         public static void Terminate() {

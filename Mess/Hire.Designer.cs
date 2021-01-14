@@ -37,8 +37,8 @@
             this.addmemBirthday = new System.Windows.Forms.Label();
             this.addmemEmail = new System.Windows.Forms.Label();
             this.addmemName = new System.Windows.Forms.Label();
-            this.addmemCancel = new System.Windows.Forms.Button();
-            this.addmemOK = new System.Windows.Forms.Button();
+            this.hireCancel = new System.Windows.Forms.Button();
+            this.hireOK = new System.Windows.Forms.Button();
             this.addmem.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,42 +198,44 @@
             this.addmemName.TabIndex = 40;
             this.addmemName.Text = "Name";
             // 
-            // addmemCancel
+            // hireCancel
             // 
-            this.addmemCancel.BackColor = System.Drawing.Color.White;
-            this.addmemCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addmemCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.addmemCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addmemCancel.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addmemCancel.Location = new System.Drawing.Point(222, 369);
-            this.addmemCancel.Name = "addmemCancel";
-            this.addmemCancel.Size = new System.Drawing.Size(129, 40);
-            this.addmemCancel.TabIndex = 39;
-            this.addmemCancel.Text = "Cancel";
-            this.addmemCancel.UseVisualStyleBackColor = false;
+            this.hireCancel.BackColor = System.Drawing.Color.White;
+            this.hireCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hireCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.hireCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hireCancel.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hireCancel.Location = new System.Drawing.Point(222, 369);
+            this.hireCancel.Name = "hireCancel";
+            this.hireCancel.Size = new System.Drawing.Size(129, 40);
+            this.hireCancel.TabIndex = 39;
+            this.hireCancel.Text = "Cancel";
+            this.hireCancel.UseVisualStyleBackColor = false;
             // 
-            // addmemOK
+            // hireOK
             // 
-            this.addmemOK.BackColor = System.Drawing.Color.White;
-            this.addmemOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addmemOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.addmemOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addmemOK.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addmemOK.Location = new System.Drawing.Point(72, 369);
-            this.addmemOK.Name = "addmemOK";
-            this.addmemOK.Size = new System.Drawing.Size(129, 40);
-            this.addmemOK.TabIndex = 38;
-            this.addmemOK.Text = "Add";
-            this.addmemOK.UseVisualStyleBackColor = false;
+            this.hireOK.BackColor = System.Drawing.Color.White;
+            this.hireOK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hireOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.hireOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hireOK.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hireOK.Location = new System.Drawing.Point(72, 369);
+            this.hireOK.Name = "hireOK";
+            this.hireOK.Size = new System.Drawing.Size(129, 40);
+            this.hireOK.TabIndex = 38;
+            this.hireOK.Text = "Hire";
+            this.hireOK.UseVisualStyleBackColor = false;
             // 
             // Hire
             // 
+            this.AcceptButton = this.hireOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Yellow;
+            this.CancelButton = this.hireCancel;
             this.ClientSize = new System.Drawing.Size(417, 421);
-            this.Controls.Add(this.addmemOK);
-            this.Controls.Add(this.addmemCancel);
+            this.Controls.Add(this.hireOK);
+            this.Controls.Add(this.hireCancel);
             this.Controls.Add(this.addmem);
             this.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -266,7 +268,7 @@
         private System.Windows.Forms.Label addmemBirthday;
         private System.Windows.Forms.Label addmemEmail;
         private System.Windows.Forms.Label addmemName;
-        private System.Windows.Forms.Button addmemCancel;
-        private System.Windows.Forms.Button addmemOK;
+        private System.Windows.Forms.Button hireCancel;
+        private System.Windows.Forms.Button hireOK;
     }
 }

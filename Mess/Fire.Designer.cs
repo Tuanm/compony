@@ -72,9 +72,11 @@
             // 
             // Fire
             // 
+            this.AcceptButton = this.fireOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Yellow;
+            this.CancelButton = this.fireCancel;
             this.ClientSize = new System.Drawing.Size(400, 386);
             this.Controls.Add(this.fireCancel);
             this.Controls.Add(this.fireOK);

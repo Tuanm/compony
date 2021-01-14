@@ -24,6 +24,8 @@
         /// </summary>
         private void InitializeComponent() {
             this.addmem = new System.Windows.Forms.Panel();
+            this.infoDepartmentOutput = new System.Windows.Forms.TextBox();
+            this.infoDepartment = new System.Windows.Forms.Label();
             this.infoPositionOutput = new System.Windows.Forms.TextBox();
             this.infoAddressOutput = new System.Windows.Forms.TextBox();
             this.infoBirthdayOutput = new System.Windows.Forms.TextBox();
@@ -36,8 +38,6 @@
             this.infoName = new System.Windows.Forms.Label();
             this.infoCancel = new System.Windows.Forms.Button();
             this.infoOK = new System.Windows.Forms.Button();
-            this.infoDepartment = new System.Windows.Forms.Label();
-            this.infoDepartmentOutput = new System.Windows.Forms.TextBox();
             this.addmem.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,27 @@
             this.addmem.Name = "addmem";
             this.addmem.Size = new System.Drawing.Size(390, 364);
             this.addmem.TabIndex = 0;
+            // 
+            // infoDepartmentOutput
+            // 
+            this.infoDepartmentOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.infoDepartmentOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.infoDepartmentOutput.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoDepartmentOutput.Location = new System.Drawing.Point(154, 253);
+            this.infoDepartmentOutput.Name = "infoDepartmentOutput";
+            this.infoDepartmentOutput.ReadOnly = true;
+            this.infoDepartmentOutput.Size = new System.Drawing.Size(212, 25);
+            this.infoDepartmentOutput.TabIndex = 54;
+            // 
+            // infoDepartment
+            // 
+            this.infoDepartment.AutoSize = true;
+            this.infoDepartment.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoDepartment.Location = new System.Drawing.Point(24, 253);
+            this.infoDepartment.Name = "infoDepartment";
+            this.infoDepartment.Size = new System.Drawing.Size(118, 24);
+            this.infoDepartment.TabIndex = 53;
+            this.infoDepartment.Text = "Workspace";
             // 
             // infoPositionOutput
             // 
@@ -196,32 +217,13 @@
             this.infoOK.UseVisualStyleBackColor = false;
             this.infoOK.Click += new System.EventHandler(this.infoOK_Click);
             // 
-            // infoDepartment
-            // 
-            this.infoDepartment.AutoSize = true;
-            this.infoDepartment.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoDepartment.Location = new System.Drawing.Point(24, 253);
-            this.infoDepartment.Name = "infoDepartment";
-            this.infoDepartment.Size = new System.Drawing.Size(118, 24);
-            this.infoDepartment.TabIndex = 53;
-            this.infoDepartment.Text = "Workspace";
-            // 
-            // infoDepartmentOutput
-            // 
-            this.infoDepartmentOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.infoDepartmentOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.infoDepartmentOutput.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoDepartmentOutput.Location = new System.Drawing.Point(154, 253);
-            this.infoDepartmentOutput.Name = "infoDepartmentOutput";
-            this.infoDepartmentOutput.ReadOnly = true;
-            this.infoDepartmentOutput.Size = new System.Drawing.Size(212, 25);
-            this.infoDepartmentOutput.TabIndex = 54;
-            // 
             // Information
             // 
+            this.AcceptButton = this.infoOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Yellow;
+            this.CancelButton = this.infoCancel;
             this.ClientSize = new System.Drawing.Size(417, 416);
             this.Controls.Add(this.addmem);
             this.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
