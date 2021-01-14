@@ -1,11 +1,11 @@
 {
   "Name": "",
-  "Email": "me@co",
-  "Birthday": "13/05/1955",
-  "Address": "Hai Phong",
+  "Email": "",
+  "Birthday": "",
+  "Address": "",
   "Position": 0,
   "Department": 0,
-  "Location": "95, 0",
+  "Location": "135, 0",
   "SubMembers": [
     {
       "Name": "TUAN",
@@ -14,7 +14,7 @@
       "Address": "Hai Phong",
       "Position": 1,
       "Department": 0,
-      "Location": "125, 0",
+      "Location": "580, 0",
       "SubMembers": []
     },
     {
@@ -24,7 +24,7 @@
       "Address": "Hung Yen",
       "Position": 0,
       "Department": 1,
-      "Location": "350, 0",
+      "Location": "0, 0",
       "SubMembers": []
     },
     {
@@ -34,7 +34,7 @@
       "Address": "Ninh Binh",
       "Position": 0,
       "Department": 2,
-      "Location": "245, 0",
+      "Location": "0, 0",
       "SubMembers": []
     }
   ]

@@ -283,7 +283,7 @@
             this.MinimizeBox = false;
             this.Name = "Workspace";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Workspace";
+            this.Text = "s";
             ((System.ComponentModel.ISupportInitialize)(this.see)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scene)).EndInit();
             this.goask.ResumeLayout(false);
